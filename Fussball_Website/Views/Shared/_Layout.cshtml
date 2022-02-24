@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - FirstWebApp</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <style>
+
+        body {
+            position: absolute;
+            background: #00DFEA;
+        }
+        .headline {
+            padding: 15px 712px;
+            display: inline-block;
+            justify-content: center;
+            color: #00452E;
+            font-size: 30px;
+            font-family: Impact;
+            background: #00BEEE;
+        }
+        main {
+            position: absolute;
+            top: 15px;
+        }
+        div:nth-of-type(1) {
+            
+        }
+
+    </style>
+</head>
+<body>
+
+    <div id="container">
+        <header class="headline">
+            FOOTBALL
+        </header>
+        <main>
+            <div>
+                <nav>
+                    <partial name="Navigation" />
+                </nav>
+            </div>
+            <content>
+                @*hier wird die zugehörige View angezeigt*@
+                @RenderBody()
+            </content>
+
+            <aside>
+                Seitenbereich
+            </aside>
+        </main>
+        <footer>
+            <partial name="Footer" />
+        </footer>
+    </div>
+
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
